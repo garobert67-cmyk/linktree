@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@theme {
+  --color-hostinger-bg: #0F0F12;
+  --color-hostinger-surface: #1A1A2E;
+  --color-hostinger-card: #1E1E32;
+  --color-hostinger-border: #2A2A3D;
+  --color-hostinger-purple: #673DE6;
+  --color-hostinger-purple-light: #7B52F5;
+  --color-hostinger-purple-glow: #673DE640;
+  --color-hostinger-text: #E0E0EC;
+  --color-hostinger-muted: #A0A0B8;
+}
+
+body{
+    min-height:100vh;
+    background: linear-gradient(160deg, #0F0F12 0%, #1A1028 50%, #0F0F12 100%);
+}
+
+/* Hostinger-style button glow & shine animation */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 8px #673DE640, 0 0 20px #673DE620; }
+  50% { box-shadow: 0 0 16px #673DE680, 0 0 40px #673DE640; }
+}
+
+.btn-hostinger {
+  background: linear-gradient(135deg, #673DE6, #7B52F5);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-hostinger::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-hostinger:hover::before {
+  left: 100%;
+}
+
+.btn-hostinger:hover {
+  background: linear-gradient(135deg, #7B52F5, #8B62FF);
+  box-shadow: 0 0 20px #673DE650, 0 4px 15px #673DE630;
+  transform: translateY(-1px);
+}
+
+/* Nav header Hostinger style */
+.nav-hostinger {
+  background: #1A1A2E;
+  border: 1px solid #2A2A3D;
+  transition: all 0.3s ease;
+}
+
+.nav-hostinger:hover {
+  border-color: #673DE640;
+}
+
+/* Input Hostinger style */
+.input-hostinger {
+  background: #1A1A2E;
+  border: 1px solid #2A2A3D;
+  color: #E0E0EC;
+  transition: all 0.3s ease;
+}
+
+.input-hostinger::placeholder {
+  color: #A0A0B8;
+}
+
+.input-hostinger:focus {
+  border-color: #673DE6;
+  box-shadow: 0 0 0 3px #673DE625;
+  outline: none;
+}
+
+/* Link card hover glow */
+.link-card-hostinger {
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.link-card-hostinger:hover {
+  box-shadow: 0 0 15px #673DE640, 0 4px 12px rgba(0,0,0,0.3);
+  border-color: #673DE650;
+}
+
+/* Social icon hover */
+.social-icon-hostinger {
+  transition: all 0.3s ease;
+}
+
+.social-icon-hostinger:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 8px #673DE6);
+}
+
+/* Not found button */
+.btn-ghost-hostinger {
+  background: #1A1A2E;
+  border: 1px solid #2A2A3D;
+  transition: all 0.3s ease;
+}
+
+.btn-ghost-hostinger:hover {
+  border-color: #673DE6;
+  background: #673DE620;
+  box-shadow: 0 0 12px #673DE630;
+}
+
+/* Delete button */
+.btn-delete-hostinger {
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.btn-delete-hostinger:hover {
+  background: #ff4d4d20;
+  transform: scale(1.1);
+}
+
+/* Preview card */
+.preview-card-hostinger {
+  border: 1px solid #2A2A3D;
+  border-radius: 8px;
+  background: #1A1A2E;
+}
+
+/* Color picker styling */
+input[type="color"] {
+  border: 2px solid #2A2A3D;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+input[type="color"]:hover {
+  border-color: #673DE6;
+}
+
+/* Logo gradient - Hostinger purple */
+.logo-hostinger {
+  background: linear-gradient(135deg, #673DE6, #9B6DFF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
